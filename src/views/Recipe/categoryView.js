@@ -18,7 +18,7 @@ import Icon from 'react-native-vector-icons/Feather';
 export default function CategoryView({navigation, route}) {
   const {categories_id} = route.params;
   const {category} = route.params;
-  const token = useSelector(state => state.auth.data.data.token);
+  const token = useSelector(state => state.auth.data.users.token);
   const data = useSelector(state => state.getbycat);
   const [search, setSearch] = useState();
   const [refresh, setRefresh] = useState(false);

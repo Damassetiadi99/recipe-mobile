@@ -29,7 +29,7 @@ export default function DetailView({route, navigation}) {
   // const [bookmark,setBookmark] = useState(null)
   // const [isBookmarked, setIsBookmarked] = useState(false);
   const isFocused = useIsFocused();
-
+  
   console.log(data)
 
   const inputData = {
@@ -80,35 +80,35 @@ export default function DetailView({route, navigation}) {
 //         })
 // }
 
-  // useEffect(() => {
-  //   if (isFocused) {
-  //     dispatch(getDetailRecipe(token, id));
-  //     // getLike()
-  //     // getBookmark()
-  //   }
-  // }, [isFocused]);
-  // if (data.isLoading === true) {
-  //   return (
-  //     <View style={MainStyle.container}>
-  //       <View style={MainStyle.main}>
-  //         <ActivityIndicator
-  //           size={'large'}
-  //           color={'#EFC81A'}
-  //           style={{alignSelf: 'center'}}
-  //         />
-  //       </View>
-  //     </View>
-  //   );
-  // }
-  // if (data.data === null) {
-  //   return (
-  //     <View style={MainStyle.container}>
-  //       <View style={MainStyle.main}>
-  //         <Text>null</Text>
-  //       </View>
-  //     </View>
-  //   );
-  // }
+  useEffect(() => {
+    if (isFocused) {
+      dispatch(getDetailRecipe(token, id));
+      // getLike()
+      // getBookmark()
+    }
+  }, [isFocused]);
+  if (data.isLoading === true) {
+    return (
+      <View style={MainStyle.container}>
+        <View style={MainStyle.main}>
+          <ActivityIndicator
+            size={'large'}
+            color={'#EFC81A'}
+            style={{alignSelf: 'center'}}
+          />
+        </View>
+      </View>
+    );
+  }
+  if (data.data === null) {
+    return (
+      <View style={MainStyle.container}>
+        <View style={MainStyle.main}>
+          <Text>null</Text>
+        </View>
+      </View>
+    );
+  }
 
   // const postLike = () => {
 //     axios.post(`https://busy-sun-hat-deer.cyclic.app/LikeAndBookmark/like?UserID=${userID}`,inputData, {
